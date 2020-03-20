@@ -1,0 +1,16 @@
+<!-- -*- mode: XML -*- -->
+<!-- run velodyne_height_map/HeightMapNodelet in a nodelet manager
+
+     $Id$
+  -->
+
+<launch>
+  <node pkg="velodyne_height_map" type="heightmap_node" name="heightmap_node">
+    <param name="cell_size" type="double" value="0.2" />
+    <param name="full_clouds" type="bool" value="true" />
+    <param name="grid_dimensions" type="int" value="900" />
+    <param name="height_threshold" type="double" value="0.25" />
+
+    <remap from="/velodyne_points" to="/laser/scan" /> 
+  </node>
+</launch>
